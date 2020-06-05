@@ -40,15 +40,15 @@ func (t *LotusChaincode) Invoke(stub shim.ChaincodeStubInterface) pb.Response {
 	fmt.Println("Invoke is running " + function)
 
 	// Route to the appropriate handler function to interact with the ledger appropriately
-	if function == "RegisterUser" { 		//注册新会员
+	if function == "RegisterUser" { 
 		return sv.RegisterUser(stub, args)
-	} else if function == "UpdateUserinfo" { //写入会员信息
+	} else if function == "UpdateUserinfo" { 
 		return sv.UpdateUserinfo(stub, args)
-	} else if function == "QueryUserinfo" { //查询会员信息
+	} else if function == "QueryUserinfo" { 
 		return sv.QueryUserinfo(stub, args)
-	} else if function == "QueryUserinfoEx" { //查询会员信息，包含星辰玛余额
+	} else if function == "QueryUserinfoEx" { 
 			return sv.QueryUserinfoEx(stub, args)		
-	} else if function == "UnregisterUser" { //注销会员
+	} else if function == "UnregisterUser" { 
 			return sv.UnregisterUser(stub, args)
 	} else if function == "TestMsg" {
 		return sv.TestMsg(stub, args)
