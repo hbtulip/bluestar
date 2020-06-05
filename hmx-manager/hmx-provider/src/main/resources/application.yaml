@@ -1,0 +1,81 @@
+ 
+ server:
+  port: 8091
+
+ dubbo:
+   application:
+      name: hmx-provider #应用名
+   registry:
+      address: zookeeper://192.168.2.152:2181 #zookeeper地址
+   protocol:
+      name: dubbo
+      port: '20889' #dubbo服务暴露的端口
+
+ logging:
+   level: 
+      #root: debug
+      #org.springframework.security: WARN
+      org.hmx.provider.service: DEBUG
+      
+   # 默认日志文件名
+   file: provider.log
+   ## 日志文件最多保存30天
+   max-history: 10
+   ## 当文件超过500m时，归档压缩
+   max-size: 100MB
+   # 默认日志路径
+   #path: ./log
+   # logback.xml路径，默认为classpath:logback.xml
+   # config: classpath:logback.xml
+
+       
+ #数据库连接配置
+ spring:
+   datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      #driver-class-name: com.mysql.cj.jdbc.Driver
+      #url: jdbc:mysql://47.92.94.224:3306/oilunion?useUnicode=true&characterEncoding=UTF-8
+      #username: root
+      #password: su123456
+      
+      #只读库
+      url: jdbc:mysql://rr-8vb49sawzg6537595co.mysql.zhangbei.rds.aliyuncs.com:3306/groupoil?useUnicode=true&characterEncoding=UTF-8&useSSL=true
+      username: yjzx
+      password: Strongunion_2013
+      
+      # 使用druid数据源
+      type: com.alibaba.druid.pool.DruidDataSource
+      
+      # 下面为连接池的补充设置，应用到上面所有数据源中
+      # 初始化大小，最小，最大
+      initialSize: 5
+      minIdle: 5
+      maxActive: 20
+      # 配置获取连接等待超时的时间
+      maxWait: 60000
+      # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      timeBetweenEvictionRunsMillis: 60000
+      # 配置一个连接在池中最小生存的时间，单位是毫秒
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: SELECT 1 FROM DUAL
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      # 打开PSCache，并且指定每个连接上PSCache的大小
+      poolPreparedStatements: true
+      maxPoolPreparedStatementPerConnectionSize: 20
+      # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+      spring.datasource.filters: stat,wall,log4j
+      # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
+      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+      
+   #配置rabbitMq 服务器
+   rabbitmq:
+      host: 192.168.2.152
+      port: 5672
+      username: admin
+      password: admin
+      #虚拟host 可以不设置,使用server默认host
+      virtual-host: hmxtestMQ
+
+

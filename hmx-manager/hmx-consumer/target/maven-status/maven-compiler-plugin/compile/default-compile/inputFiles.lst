@@ -1,0 +1,6 @@
+D:\eclipse-workspace\hmx\hmx-manager\hmx-consumer\src\main\java\org\hmx\consumer\App.java
+D:\eclipse-workspace\hmx\hmx-manager\hmx-consumer\src\main\java\org\hmx\consumer\mq\MyRabbitMqConfiguration.java
+D:\eclipse-workspace\hmx\hmx-manager\hmx-consumer\src\main\java\org\hmx\consumer\controller\UserController.java
+D:\eclipse-workspace\hmx\hmx-manager\hmx-consumer\src\main\java\org\hmx\consumer\mq\MessageConsumer.java
+D:\eclipse-workspace\hmx\hmx-manager\hmx-consumer\src\main\java\org\hmx\consumer\mq\MessageProducer.java
+D:\eclipse-workspace\hmx\hmx-manager\hmx-consumer\src\main\java\org\hmx\consumer\mq\QueueConstants.java
