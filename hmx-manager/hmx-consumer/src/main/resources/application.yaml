@@ -1,0 +1,25 @@
+ dubbo:
+   application:
+      name: hmx-consumer #应用名
+   registry:
+      address: zookeeper://192.168.2.152:2181 #zookeeper地址
+   consumer:
+      timeout: 5000
+      check: false
+      
+ spring:
+   datasource:
+ 
+   #配置rabbitMq 服务器
+   rabbitmq:
+      host: 192.168.2.152
+      port: 5672
+      username: admin
+      password: admin
+      #虚拟host 可以不设置,使用server默认host
+      virtual-host: hmxtestMQ
+      listener:
+         direct:
+           #acknowledge-mode: auto|manual|none
+           #prefetch: 1
+           
